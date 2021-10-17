@@ -29,13 +29,16 @@ body {
 }
 
 .img {
-    width: 500px;
-    height: 500px;
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .img-container {
     width: 400%;
     display: flex;
+    transition: margin .3s ease-in-out;
 }
 
 .dot {
@@ -89,18 +92,58 @@ body {
     width: 500px;
 }
 
+.text-container {
+    width: 400%;
+    display: flex;
+    transition: margin .3s ease-in-out;
+}
+
 .dotsWrapper {
     display: flex;
 }
 
+.dotsWrapper label {
+    transition: background-color 0.2s;
+}
 
 #btn-1:checked ~ .dotsWrapper label[for="btn-1"] .dot,
 #btn-2:checked ~ .dotsWrapper label[for="btn-2"] .dot,
 #btn-3:checked ~ .dotsWrapper label[for="btn-3"] .dot, 
 #btn-4:checked ~ .dotsWrapper label[for="btn-4"] .dot {
-    background-color: #666666;
+    background-color: black;
 }
 
+#btn-1:checked ~ .img-container .img {
+    transform: translate(0);
+}
+
+#btn-2:checked ~ .img-container .img {
+    transform: translate(-500px);
+}
+
+#btn-3:checked ~ .img-container .img {
+    transform: translate(-1000px);
+}
+
+#btn-4:checked ~ .img-container .img {
+    transform: translate(-1500px);
+}
+
+#btn-1:checked ~ .text-container .text {
+    transform: translate(0);
+}
+
+#btn-2:checked ~ .text-container .text {
+    transform: translate(-500px);
+}
+
+#btn-3:checked ~ .text-container .text {
+    transform: translate(-1000px);
+}
+
+#btn-4:checked ~ .text-container .text {
+    transform: translate(-1500px);
+}
 
 
 @media (max-width: 768px) {
