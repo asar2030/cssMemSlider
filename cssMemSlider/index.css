@@ -22,6 +22,9 @@ body {
     width: 500px;
     overflow: hidden;
     padding-top: 10px;
+    display: grid;
+    grid-template-columns: 500px;
+    grid-template-rows: 20fr 1fr;
 }
 
 .wrapper input[type=radio] {
@@ -87,6 +90,10 @@ body {
 }
 
 .text-container {
+
+    transition: margin .3s ease-in-out;
+}
+.text-wrapper {
     width: 400%;
     display: flex;
     transition: margin .3s ease-in-out;
@@ -103,7 +110,8 @@ label:hover .dot {
 }
 .dotsWrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: flex-start;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -159,6 +167,13 @@ label:hover .dot {
     
     .wrapper {
         width: 80%;
+        grid-template-columns: 400px;
+        grid-template-rows: 7fr 0fr;
+    }
+    .dotsWrapper {
+        grid-row: 2/4;
+        justify-content: center;
+        margin-bottom: 15px;
     }
 
     .img {
@@ -168,6 +183,7 @@ label:hover .dot {
     .text {
         width: 400px;
     }
+
     #btn-1:checked ~ .img-container .img {
         transform: translate(0);
     }
@@ -209,6 +225,8 @@ label:hover .dot {
     
     .wrapper {
         width: 300px;
+        grid-template-columns: 300px;
+        grid-template-rows: 7fr 0fr;
     }
 
     .img {
