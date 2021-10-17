@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.wrapper {
+    width: 500px;
+    overflow: hidden;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 500px;
+    grid-template-rows: 20fr 1fr;
+}
+
+.wrapper input[type=radio] {
+    display: none;
+}
+
+.img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+}
+
+.img-container {
+    width: 400%;
+    display: flex;
+    transition: .3s ease-in-out;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: .3s all;
+    position: relative;
+}
+
+.span {
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+    margin: 10px 0;
+}
+
+.activeDot {
+    background-color: black;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    margin-top: 5px;
+    width: 500px;
+    transition: .3s ease-in-out;
+}
+
+.text-container {
+
+    transition: margin .3s ease-in-out;
+}
+.text-wrapper {
+    width: 400%;
+    display: flex;
+    transition: margin .3s ease-in-out;
+}
+
+label {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+label:hover .dot {
+    background-color: red;
+}
+.dotsWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dotsWrapper label {
+    transition: background-color 0.2s;
+}
+
+#btn-1:checked ~ .dotsWrapper label[for="btn-1"] .dot,
+#btn-2:checked ~ .dotsWrapper label[for="btn-2"] .dot,
+#btn-3:checked ~ .dotsWrapper label[for="btn-3"] .dot, 
+#btn-4:checked ~ .dotsWrapper label[for="btn-4"] .dot {
+    background-color: black;
+}
+
+#btn-1:checked ~ .img-container .img {
+    transform: translate(0);
+}
+
+#btn-2:checked ~ .img-container .img {
+    transform: translate(-500px);
+}
+
+#btn-3:checked ~ .img-container .img {
+    transform: translate(-1000px);
+}
+
+#btn-4:checked ~ .img-container .img {
+    transform: translate(-1500px);
+}
+
+#btn-1:checked ~ .text-container .text {
+    transform: translate(0);
+}
+
+#btn-2:checked ~ .text-container .text {
+    transform: translate(-500px);
+}
+
+#btn-3:checked ~ .text-container .text {
+    transform: translate(-1000px);
+}
+
+#btn-4:checked ~ .text-container .text {
+    transform: translate(-1500px);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 500px;
+    }
+    
+    .wrapper {
+        width: 80%;
+        grid-template-columns: 400px;
+        grid-template-rows: 7fr 0fr;
+    }
+    .dotsWrapper {
+        grid-row: 2/4;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .img {
+        width: 400px;
+    }
+
+    .text {
+        width: 400px;
+    }
+
+    #btn-1:checked ~ .img-container .img {
+        transform: translate(0);
+    }
+    
+    #btn-2:checked ~ .img-container .img {
+        transform: translate(-400px);
+    }
+    
+    #btn-3:checked ~ .img-container .img {
+        transform: translate(-800px);
+    }
+    
+    #btn-4:checked ~ .img-container .img {
+        transform: translate(-1200px);
+    }
+    
+    #btn-1:checked ~ .text-container .text {
+        transform: translate(0);
+    }
+    
+    #btn-2:checked ~ .text-container .text {
+        transform: translate(-400px);
+    }
+    
+    #btn-3:checked ~ .text-container .text {
+        transform: translate(-800px);
+    }
+    
+    #btn-4:checked ~ .text-container .text {
+        transform: translate(-1200px);
+    }
+  }
+
+
+  @media (max-width: 420px) {
+    .container {
+        width: 95%;
+    }
+    
+    .wrapper {
+        width: 300px;
+        grid-template-columns: 300px;
+        grid-template-rows: 7fr 0fr;
+    }
+
+    .img {
+        width: 300px;
+    }
+
+    .text {
+        width: 300px;
+    }
+    #btn-1:checked ~ .img-container .img {
+        transform: translate(0);
+    }
+    
+    #btn-2:checked ~ .img-container .img {
+        transform: translate(-300px);
+    }
+    
+    #btn-3:checked ~ .img-container .img {
+        transform: translate(-600px);
+    }
+    
+    #btn-4:checked ~ .img-container .img {
+        transform: translate(-900px);
+    }
+    
+    #btn-1:checked ~ .text-container .text {
+        transform: translate(0);
+    }
+    
+    #btn-2:checked ~ .text-container .text {
+        transform: translate(-300px);
+    }
+    
+    #btn-3:checked ~ .text-container .text {
+        transform: translate(-600px);
+    }
+    
+    #btn-4:checked ~ .text-container .text {
+        transform: translate(-900px);
+    }
+  }
