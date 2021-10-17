@@ -33,12 +33,13 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    transition: .3s ease-in-out;
 }
 
 .img-container {
     width: 400%;
     display: flex;
-    transition: margin .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 .dot {
@@ -46,7 +47,6 @@ body {
     height: 10px;
     border-radius: 100%;
     border: 1px solid black;
-    margin-right: 20px;
     cursor: pointer;
     transition: .3s all;
     position: relative;
@@ -60,13 +60,6 @@ body {
     top: -8px;
     left: -8px;
 }
-
-
-.dot:hover, .dot.hover {
-    transition: .3s all;
-    background-color: red;
-}
-
 
 .dots {
     display: flex;
@@ -90,6 +83,7 @@ body {
 .text {
     margin-top: 5px;
     width: 500px;
+    transition: .3s ease-in-out;
 }
 
 .text-container {
@@ -98,8 +92,20 @@ body {
     transition: margin .3s ease-in-out;
 }
 
+label {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+label:hover .dot {
+    background-color: red;
+}
 .dotsWrapper {
     display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .dotsWrapper label {
@@ -152,7 +158,7 @@ body {
     }
     
     .wrapper {
-        width: 400px;
+        width: 80%;
     }
 
     .img {
@@ -162,12 +168,43 @@ body {
     .text {
         width: 400px;
     }
+    #btn-1:checked ~ .img-container .img {
+        transform: translate(0);
+    }
+    
+    #btn-2:checked ~ .img-container .img {
+        transform: translate(-400px);
+    }
+    
+    #btn-3:checked ~ .img-container .img {
+        transform: translate(-800px);
+    }
+    
+    #btn-4:checked ~ .img-container .img {
+        transform: translate(-1200px);
+    }
+    
+    #btn-1:checked ~ .text-container .text {
+        transform: translate(0);
+    }
+    
+    #btn-2:checked ~ .text-container .text {
+        transform: translate(-400px);
+    }
+    
+    #btn-3:checked ~ .text-container .text {
+        transform: translate(-800px);
+    }
+    
+    #btn-4:checked ~ .text-container .text {
+        transform: translate(-1200px);
+    }
   }
 
 
   @media (max-width: 420px) {
     .container {
-        width: 400px;
+        width: 95%;
     }
     
     .wrapper {
@@ -180,5 +217,36 @@ body {
 
     .text {
         width: 300px;
+    }
+    #btn-1:checked ~ .img-container .img {
+        transform: translate(0);
+    }
+    
+    #btn-2:checked ~ .img-container .img {
+        transform: translate(-300px);
+    }
+    
+    #btn-3:checked ~ .img-container .img {
+        transform: translate(-600px);
+    }
+    
+    #btn-4:checked ~ .img-container .img {
+        transform: translate(-900px);
+    }
+    
+    #btn-1:checked ~ .text-container .text {
+        transform: translate(0);
+    }
+    
+    #btn-2:checked ~ .text-container .text {
+        transform: translate(-300px);
+    }
+    
+    #btn-3:checked ~ .text-container .text {
+        transform: translate(-600px);
+    }
+    
+    #btn-4:checked ~ .text-container .text {
+        transform: translate(-900px);
     }
   }
